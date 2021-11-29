@@ -1,5 +1,6 @@
 package com.example.simpleparadox.listycity;
 
+<<<<<<< HEAD
 import org.junit.jupiter.api.Test;
 
 
@@ -56,3 +57,8 @@ class CityListTest {
     }
 
 }
+=======
+public class CityListTest {
+    
+}
+>>>>>>> fd45683 (CityList file has been created and also a testfile for this has been created)
