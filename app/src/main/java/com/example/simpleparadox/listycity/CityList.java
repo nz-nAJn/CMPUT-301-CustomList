@@ -1,7 +1,6 @@
 package com.example.simpleparadox.listycity;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.util.Collections;
 import java.util.List;
 
@@ -34,12 +33,11 @@ public class CityList {
         return list;
     }
 
-=======
-import java.util.List;
-
-public class CityList {
-    private List<City> cities = new ArrayList<>();
-
+    /**
+     *
+     * This deletes a city from the list
+     * @param city
+     */
 
     public void delete(City city) {
         if (cities.contains(city)) {
@@ -48,10 +46,15 @@ public class CityList {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * This returns the list size
+     * @return
+     *       Returns a integer value
+     */
     public int getListSize() {
         List<City> list = cities;
         int sizeOfTheList = list.size();
         return sizeOfTheList;
     }
->>>>>>> fd45683 (CityList file has been created and also a testfile for this has been created)
 }

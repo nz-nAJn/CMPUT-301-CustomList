@@ -1,10 +1,11 @@
 package com.example.simpleparadox.listycity;
 
-<<<<<<< HEAD
 import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
 
 class CityListTest {
 
@@ -44,6 +45,30 @@ class CityListTest {
     }
 
     @Test
+    void testDelete() {
+        CityList cityList = mockCityList();
+
+        assertEquals(1, cityList.getCities().size());
+
+        City city = new City("Edmonton", "Alberta");
+        cityList.add(city);
+
+        assertEquals(0, cityList.getCities().size());
+        assertTrue(cityList.getCities().contains(city));
+    }
+
+    @Test
+    void testDeleteException() {
+        CityList cityList = mockCityList();
+
+        City city = new City("Yellowknife", "Northwest Territories");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            cityList.delete(city);
+        });
+    }
+
+    @Test
     void testGetCities() {
         CityList cityList = mockCityList();
 
@@ -56,9 +81,20 @@ class CityListTest {
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
     }
 
+    void testgetListSize() {
+        CityList cityList = mockCityList();
+        List<City> list = (List<City>) cityList;
+
+        assertEquals(1, list.size());
+
+        City city = new City("Charlottetown", "Prince Edward Island");
+        cityList.add(city);
+
+        list = (List<City>) cityList;
+
+        assertEquals(2, list.size());
+    }
+
 }
-=======
-public class CityListTest {
-    
-}
->>>>>>> fd45683 (CityList file has been created and also a testfile for this has been created)
+
+
